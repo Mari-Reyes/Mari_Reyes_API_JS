@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colombia en datos - Mini Portal</title>
+    <link rel = "stylesheet" href="./css/main.css">
+    <link rel = "stylesheet" href="./css/index.css">
+    <link rel = "icon" type="images/svg" href="./images/favicon.svg"
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>🇨🇴 Mini Portal Colombia</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Datos Generales</a></li>
+                <li><a href="turismo.html" class="active">Guía Turística</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Guía Turística de Colombia</h2>
+            <p>Explora los principales atractivos turísticos del país.</p>
+        </section>
+
+            <!-- Contenedor para el mensaje de carga -->
+        <div id="loading" class="loading">Cargando atractivos turísticos...</div>
+
+            <!-- Contenedor donde se renderizará la cuadrícula de tarjetas -->
+        <section id="attractions-container" class="attractions-grid"></section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript Vanilla</p>
+    </footer>
+
+    <script src="./js/turismo.js"></script>
+</body>
+
+</html>

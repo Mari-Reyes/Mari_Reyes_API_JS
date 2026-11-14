@@ -20,5 +20,24 @@
         </nav>
     </header>
 
+    <main class="container">
+        <section class="hero">
+            <h2>Colombia en Datos</h2>
+            <p>Información general, demográfica y geográfica obtenida en tiempo real desde la API oficial.</p>
+        </section>
+
+        <!-- Contenedor para el mensaje de carga -->
+        <div id="loading" class="loading">Cargando información del país...</div>
+
+        <!-- Contenedor donde se renderizarán los datos dinámicamente -->
+        <section id="country-container" class="country-grid"></section>
+
+        <footer>
+        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript Vanilla</p>
+    </footer>
+
+    <script src="./js/index.js"></script>
+    
+    </main>
 </body>
 </html>

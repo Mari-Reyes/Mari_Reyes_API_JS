@@ -7,7 +7,7 @@
     <title>Colombia en datos - Mini Portal</title>
     <link rel = "stylesheet" href="./css/main.css">
     <link rel = "stylesheet" href="./css/index.css">
-    <link rel = "icon" type="images/svg" href="./images/favicon.svg"
+    <link rel = "icon" type="images/svg" href="./images/favicon.svg">
 </head>
 
 <body>
@@ -15,32 +15,46 @@
     <header>
         <nav class = "navbar">
             <h1> Mini portal Colombia </h1>
-            <ul class = "nav.links">
+            <ul class = "nav-links">
                 <li> <a href="index.html" class="active"> Datos Generales</a></li>
                 <li> <a href="turismo.html"> Guia turismo</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h2>Colombia en Datos</h2>
-            <p>Información general, demográfica y geográfica obtenida en tiempo real desde la API oficial.</p>
+    <main>
+
+        <section class="hero-1">
+            <div class="hero-1-content">
+                <div class = "herp-1-text">
+                    <h2>Colombia en Datos</h2>
+                    <p>Información general, demográfica y geográfica obtenida en tiempo real desde la API oficial.</p>
+                    <!--Boton creado desde js (Guia turismo)-->
+                </div>
+                <div class="img-api" id="hero-1-flag-container">
+                    <span>Imagen cargada desde la API</span>
+            </div>
         </section>
 
         <!-- Contenedor para el mensaje de carga -->
-        <div id="loading" class="loading">Cargando información del país...</div>
+        <section class="status-section">
+            <h3 id="loading" class="loading">Cargando información del país...</h3>
+            <p class="status-descripcion">A continuación puedes acceder a la información oficial de la API Colombia y a sus elementos de forma simple y sencilla.</p>
+            <!--Boton creado desde js (Buscar informacion)-->
+        </section>
 
         <!-- Contenedor donde se renderizarán los datos dinámicamente -->
-        <section id="country-container" class="country-grid"></section>
-
-        <footer>
-        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript Vanilla</p>
-    </footer>
+        <section class="results-dark">
+            <div id="country-container" class="result-warpper"></div>
+            <!--Informacion traida desde js-->
+    </main>
 
     <script src="./js/index.js"></script>
 
-    </main>
 </body>
+
+    <footer>
+        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript Vanilla</p>
+    </footer>
 
 </html>

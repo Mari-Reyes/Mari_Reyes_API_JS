@@ -15,4 +15,6 @@ Sitio web informativo desarrollado con JavaScript, HTML5 y CSS que consume datos
 ## Instrucciones de Uso
 1. Clona este repositorio en tu equipo local:
    ```bash
-   --
+   -- https://github.com/Mari-Reyes/Mari_Reyes_API_JS.git
+2. Link de la pagina en la web:
+   --https://mari-reyes.github.io/Mari_Reyes_API_JS/turismo.html

@@ -8,6 +8,10 @@ Sitio web informativo desarrollado con JavaScript, HTML5 y CSS que consume datos
 * **CSS** (Flexbox, Grid, diseño responsivo)
 * **JavaScript** (`fetch`, async/await, manipulación del DOM, manejo de errores)
 
+##Mokcups del diseño de las páginas:
+<img width="1366" height="3840" alt="1" src="https://github.com/user-attachments/assets/cceaf7d2-d7bd-46bb-8b84-acbc7505c197" />
+<img width="1366" height="3840" alt="2" src="https://github.com/user-attachments/assets/2b9a85d8-d33e-4596-9d52-1717979d5fa0" />
+
 ## Instrucciones de Uso
 1. Clona este repositorio en tu equipo local:
    ```bash

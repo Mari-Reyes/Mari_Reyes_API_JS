@@ -1,0 +1,86 @@
+
+/* El buscador de lugares es más angosto y centrado */
+.results {
+    width: min(100%, 760px);
+    margin-inline: auto;
+}
+
+/* Resultado de un lugar: [nombre + descripción] | [imagen] */
+.place-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 1rem;
+    align-items: start;
+}
+
+.place-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.place-layout .value-img {
+    min-height: 200px;
+}
+
+/* ---------- Top de lugares turísticos ---------- */
+.tabla-places h2 {
+    padding: clamp(0.9rem, 3vw, 1.4rem) clamp(1rem, 3vw, 2rem);
+    background: var(--rojo);
+    color: var(--blanco);
+    border-radius: var(--radio-md);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    letter-spacing: -0.03em;
+}
+
+.tabla-places table {
+    width: min(100%, 800px);
+    margin: 1.2rem auto 0;
+    border-collapse: separate;
+    border-spacing: 0.6rem 0.7rem;
+}
+
+.tabla-places th,
+.tabla-places td {
+    padding: 0.7rem 1rem;
+    background: var(--grad-amarillo);
+    border-radius: 12px;
+    text-align: center;
+    font-size: clamp(0.85rem, 2.4vw, 1.3rem);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s, background-color 0.3s;
+}
+
+.tabla-places th { font-weight: 800; }
+
+/* Columna del número */
+.tabla-places th:first-child,
+.tabla-places td:first-child {
+    width: 3.4rem;
+    padding-inline: 0.4rem;
+    font-weight: 800;
+    font-size: clamp(1.1rem, 3.5vw, 2rem);
+}
+
+/* Hover: la fila se levanta */
+.tabla-places tbody tr:hover td {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(3, 29, 66, 0.22);
+}
+
+/* Las filas que inserta JS entran una tras otra */
+.tabla-places tbody tr {
+    animation: aparecer 0.5s var(--ease) both;
+}
+
+.tabla-places tbody tr:nth-child(2) { animation-delay: 0.07s; }
+.tabla-places tbody tr:nth-child(3) { animation-delay: 0.14s; }
+.tabla-places tbody tr:nth-child(4) { animation-delay: 0.21s; }
+.tabla-places tbody tr:nth-child(5) { animation-delay: 0.28s; }
+.tabla-places tbody tr:nth-child(6) { animation-delay: 0.35s; }
+.tabla-places tbody tr:nth-child(n+7) { animation-delay: 0.42s; }
+
+@media (max-width: 560px) {
+    .place-layout { grid-template-columns: 1fr; }
+    .tabla-places table { border-spacing: 0.35rem 0.5rem; }
+}

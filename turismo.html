@@ -1,45 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colombia en datos - Mini Portal</title>
     <link rel = "stylesheet" href="./css/main.css">
     <link rel = "stylesheet" href="./css/index.css">
-    <link rel = "icon" type="images/svg" href="./images/favicon.svg"
+    <link rel = "icon" type="images/svg" href="./images/favicon.svg">
 </head>
 
-<>
+<body>
+    
     <header>
-        <nav class="navbar">
-            <h1>🇨🇴 Mini Portal Colombia</h1>
-            <ul class="nav-links">
-                <li><a href="index.html">Datos Generales</a></li>
-                <li><a href="turismo.html" class="active">Guía Turística</a></li>
+        <nav class = "navbar">
+            <h1> Mini portal Colombia </h1>
+            <ul class = "nav-links">
+                <li> <a href="index.html"> Datos Generales</a></li>
+                <li> <a href="turismo.html" class="active"> Guia turismo</a></li>
+                <li> <img src="images/mapa.svg"></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
+    <main>
+
         <section class="hero">
-            <h2>Guía Turística de Colombia</h2>
-            <p>Explora los principales atractivos turísticos del país.</p>
+            <div class="hero-content">
+                <div class = "hero-text">
+                    <h2>Lugares asombrosos</h2>
+                    <p>De la montaña al mar, Colombia está llena de rincones inolvidables. Conoce sus principales atractivos turísticos aquí.</p>
+                </div>
+                <div class="img-api" id="hero-flag-container-2">
+                    <span>Imagen cargada desde la API</span>
+            </div>
         </section>
 
-            <!-- Contenedor para el mensaje de carga -->
-        <div id="loading" class="loading">Cargando atractivos turísticos...</div>
+        <!-- Contenedor para el mensaje de carga -->
+        <section class="status-section">
+            <h3 id="loading" class="loading">Cargando información del país...</h3>
+            <p class="status-descripcion">A continuación puedes acceder a la información oficial de la API Colombia y a sus elementos de forma simple y sencilla.</p>
+        </section>
 
-            <!-- Contenedor donde se renderizará la cuadrícula de tarjetas -->
-        <section id="attractions-container" class="attractions-grid"></section>
+        <!-- Contenedor donde se renderizarán los datos dinámicamente -->
+        <section class="results">
+            <div id="country-container" class="result-warpper">
+                <h2 class="result-title">Conoce mas</h2>
+                <p class="information">Selecciona un lugar para visualizar su información</p>
+                <a href="#arrive-information" class="btn-icon">
+                    <img scr="">
+                </a>
+            </div>
+
+            <div id="arrive-information">
+                <!--Informacion traida desde js-->
+            </div>
+
+            <div id="show-information">
+                <!--Aqui se vera el resultado de la busqueda-->
+            </div>
+        </section>
+
+        <section class="tabla-places">
+            <h2>Top mejores lugares turisticos de nuestro pais </h2>
+            <!--Traer la informacion correspondiente desde js-->
+        </section>
     </main>
 
-    <script src="./js/turismo.js"></script>
+    <script src="./js/index.js"></script>
 
 </body>
 
     <footer>
-        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript Vanilla</p>
+        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript</p>
     </footer>
-
 </html>

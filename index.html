@@ -18,20 +18,21 @@
             <ul class = "nav-links">
                 <li> <a href="index.html" class="active"> Datos Generales</a></li>
                 <li> <a href="turismo.html"> Guia turismo</a></li>
+                <li> <img src="images/mapa.svg"></li>
             </ul>
         </nav>
     </header>
 
     <main>
 
-        <section class="hero-1">
-            <div class="hero-1-content">
-                <div class = "herp-1-text">
+        <section class="hero">
+            <div class="hero-content">
+                <div class = "hero-text">
                     <h2>Colombia en Datos</h2>
                     <p>Información general, demográfica y geográfica obtenida en tiempo real desde la API oficial.</p>
                     <!--Boton creado desde js (Guia turismo)-->
                 </div>
-                <div class="img-api" id="hero-1-flag-container">
+                <div class="img-api" id="hero-flag-container-1">
                     <span>Imagen cargada desde la API</span>
             </div>
         </section>
@@ -44,9 +45,28 @@
         </section>
 
         <!-- Contenedor donde se renderizarán los datos dinámicamente -->
-        <section class="results-dark">
-            <div id="country-container" class="result-warpper"></div>
-            <!--Informacion traida desde js-->
+        <section class="results">
+            <div id="country-container" class="result-warpper">
+                <h2 class="result-title">Colombia</h2>
+                <p class="information">Selecciona la información que deseas visualizar</p>
+                <a href="#arrive-information" class="btn-icon">
+                    <img scr="">
+                </a>
+            </div>
+
+            <div id="arrive-information">
+                <!--Informacion traida desde js-->
+            </div>
+
+            <div id="show-information">
+                <!--Aqui se vera el resultado de la busqueda-->
+            </div>
+        </section>
+
+        <section class="extra-info">
+            <h2>¿Quieres descubrir los lugares más asombrosos de nuestro país? </h2>
+            <a class="btn-turismo" href="turismo.html"> Ver guia turismo</a>
+        </section>
     </main>
 
     <script src="./js/index.js"></script>
@@ -54,7 +74,6 @@
 </body>
 
     <footer>
-        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript Vanilla</p>
+        <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript</p>
     </footer>
-
 </html>

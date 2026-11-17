@@ -1,26 +1,7 @@
-
 /* El buscador de lugares es más angosto y centrado */
 .results {
     width: min(100%, 760px);
     margin-inline: auto;
-}
-
-/* Resultado de un lugar: [nombre + descripción] | [imagen] */
-.place-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-    gap: 1rem;
-    align-items: start;
-}
-
-.place-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.place-layout .value-img {
-    min-height: 200px;
 }
 
 /* ---------- Top de lugares turísticos ---------- */
@@ -32,55 +13,70 @@
     font-weight: 800;
     font-size: clamp(1.5rem, 5vw, 3rem);
     letter-spacing: -0.03em;
+    text-align: center;
 }
 
 .tabla-places table {
-    width: min(100%, 800px);
-    margin: 1.2rem auto 0;
+    width: min(100%, 820px);
+    margin: 1.4rem auto 0;
     border-collapse: separate;
-    border-spacing: 0.6rem 0.7rem;
+    border-spacing: 0.7rem 0.75rem;
 }
 
 .tabla-places th,
 .tabla-places td {
-    padding: 0.7rem 1rem;
-    background: var(--grad-amarillo);
+    padding: 0.75rem 1.1rem;
     border-radius: 12px;
     text-align: center;
-    font-size: clamp(0.85rem, 2.4vw, 1.3rem);
-    transition: transform 0.3s var(--ease), box-shadow 0.3s, background-color 0.3s;
+    font-size: clamp(0.85rem, 2.3vw, 1.15rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: transform 0.3s var(--ease), box-shadow 0.3s;
 }
 
-.tabla-places th { font-weight: 800; }
+.tabla-places th {
+    font-weight: 800;
+}
 
-/* Columna del número */
+/* Columna 1: Número en amarillo */
 .tabla-places th:first-child,
 .tabla-places td:first-child {
-    width: 3.4rem;
+    width: 3.6rem;
     padding-inline: 0.4rem;
+    background: var(--grad-amarillo);
     font-weight: 800;
-    font-size: clamp(1.1rem, 3.5vw, 2rem);
+    font-size: clamp(1.1rem, 3.2vw, 1.6rem);
+}
+
+/* Columna 2: Nombre del sitio en azul pastel[cite: 15] */
+.tabla-places th:nth-child(2),
+.tabla-places td:nth-child(2) {
+    background: #c8e1ff;
+}
+
+/* Columna 3: Lugar / Ubicación en rosado pastel[cite: 15] */
+.tabla-places th:nth-child(3),
+.tabla-places td:nth-child(3) {
+    background: #fba8a4;
 }
 
 /* Hover: la fila se levanta */
 .tabla-places tbody tr:hover td {
     transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(3, 29, 66, 0.22);
+    box-shadow: 0 8px 16px rgba(3, 29, 66, 0.18);
 }
 
-/* Las filas que inserta JS entran una tras otra */
+/* Animación escalonada de filas */
 .tabla-places tbody tr {
     animation: aparecer 0.5s var(--ease) both;
 }
 
-.tabla-places tbody tr:nth-child(2) { animation-delay: 0.07s; }
-.tabla-places tbody tr:nth-child(3) { animation-delay: 0.14s; }
-.tabla-places tbody tr:nth-child(4) { animation-delay: 0.21s; }
-.tabla-places tbody tr:nth-child(5) { animation-delay: 0.28s; }
-.tabla-places tbody tr:nth-child(6) { animation-delay: 0.35s; }
-.tabla-places tbody tr:nth-child(n+7) { animation-delay: 0.42s; }
+.tabla-places tbody tr:nth-child(2) { animation-delay: 0.06s; }
+.tabla-places tbody tr:nth-child(3) { animation-delay: 0.12s; }
+.tabla-places tbody tr:nth-child(4) { animation-delay: 0.18s; }
+.tabla-places tbody tr:nth-child(5) { animation-delay: 0.24s; }
+.tabla-places tbody tr:nth-child(n+6) { animation-delay: 0.30s; }
 
 @media (max-width: 560px) {
-    .place-layout { grid-template-columns: 1fr; }
     .tabla-places table { border-spacing: 0.35rem 0.5rem; }
 }

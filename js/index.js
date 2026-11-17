@@ -135,24 +135,30 @@ function renderizarTarjetasDatos(lista) {
 
     lista.forEach((item) => {
         const box = document.createElement("article");
-        box.className = "result-box";
 
-        const contenidoValor = item.esImagen
-            ? `<div class="value-img"><img src="${item.valor}" alt="${item.etiqueta}" onerror="this.src='${IMAGEN_HERO_RESPALDO}'"></div>`
-            : `<div class="value">${item.valor}</div>`;
-
-        box.innerHTML = `
-            <div class="example">${item.ejemplo}</div>
-            <div class="result-row">
+        if (item.esImagen) {
+            // Diseño vertical centrado para imágenes (como "Bandera de Colombia" en el boceto[cite: 16])
+            box.className = "result-box vertical-center";
+            box.innerHTML = `
                 <div class="label">${item.etiqueta}</div>
-                ${contenidoValor}
-            </div>
-        `;
+                <div class="value-img">
+                    <img src="${item.valor}" alt="${item.etiqueta}" onerror="this.src='${IMAGEN_HERO_RESPALDO}'">
+                </div>
+            `;
+        } else {
+            // Diseño horizontal en 2 columnas para texto (como "Capital de Colombia" en el boceto[cite: 16])
+            box.className = "result-box";
+            box.innerHTML = `
+                <div class="result-row">
+                    <div class="label">${item.etiqueta}</div>
+                    <div class="value">${item.valor}</div>
+                </div>
+            `;
+        }
 
         showContainer.appendChild(box);
     });
 }
-
 // Quita tildes y pasa a minúsculas para búsquedas cómodas
 function normalizarTexto(str) {
     return str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();

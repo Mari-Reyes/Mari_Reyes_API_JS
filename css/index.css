@@ -160,69 +160,90 @@
     line-height: 1.1;
     text-align: justify;
 }
-
 /* Panel del buscador (lo llena JS) */
-#arrive-information {
+#arrive-information-index,
+#arrive-information-turismo {
     padding: clamp(0.8rem, 3vw, 1.4rem) clamp(1rem, 5vw, 2.2rem);
     background: var(--azul-2);
     border-radius: var(--radio-md);
 }
 
-/* Contenedor de resultados: una tarjeta .result-box por búsqueda */
-#show-information {
+/* Contenedor de resultados */
+#show-information-index,
+#show-information-turismo {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
 /* Si JS todavía no puso nada, el panel no ocupa espacio */
-#arrive-information:not(:has(*)),
-#show-information:not(:has(*)) {
+#arrive-information-index:not(:has(*)),
+#show-information-index:not(:has(*)),
+#arrive-information-turismo:not(:has(*)),
+#show-information-turismo:not(:has(*)) {
     display: none;
 }
 
-/* Tarjeta de resultado: .result-box > .example + .result-row (.label + .value) */
+/* Tarjeta base de resultado */
 .result-box {
     display: flex;
     flex-direction: column;
-    gap: 0.9rem;
-    padding: clamp(0.8rem, 3vw, 1.4rem) clamp(1rem, 5vw, 2.2rem);
+    gap: 1rem;
+    padding: clamp(1rem, 3vw, 1.6rem) clamp(1rem, 5vw, 2.2rem);
     background: var(--azul-2);
     border-radius: var(--radio-md);
 }
 
-.example,
-.value {
-    padding: 0.9rem 1rem;
-    background: var(--grad-amarillo);
-    border-radius: 12px;
-    text-align: center;
-    font-size: clamp(0.95rem, 2.4vw, 1.2rem);
-    color: #333;
-}
-
+/* Modo 1: Fila horizontal (Etiqueta roja izquierda | Valor amarillo derecha) -> Ej: Capital */
 .result-row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-    gap: 1rem;
-    align-items: start;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+    gap: 1.2rem;
+    align-items: center;
+}
+
+/* Modo 2: Columna vertical centrada (Etiqueta roja arriba | Imagen o descripción abajo) -> Ej: Bandera y Turismo */
+.result-box.vertical-center {
+    align-items: center;
+}
+
+.result-box.vertical-center .label {
+    width: fit-content;
+    min-width: 210px;
+    padding-inline: 2rem;
+    text-align: center;
 }
 
 .label {
-    padding: 0.9rem 1rem;
+    padding: 0.85rem 1.2rem;
     background: var(--rojo);
     color: var(--blanco);
     border-radius: 12px;
+    font-weight: 700;
+    font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+    text-align: center;
+}
+
+.value {
+    width: 100%;
+    padding: 1rem 1.4rem;
+    background: var(--grad-amarillo);
+    border-radius: 12px;
+    text-align: center;
     font-weight: 600;
-    font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+    font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+    color: #222;
 }
 
 .value-img {
-    min-height: 170px;
+    width: min(100%, 340px);
+    height: 190px;
     overflow: hidden;
-    padding: 0;
     background: var(--grad-amarillo);
     border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .value-img img {
@@ -231,24 +252,12 @@
     object-fit: cover;
 }
 
-/* Lo que inserte JS aparece con suavidad */
-#arrive-information > *,
-#show-information > * {
+/* Animación de entrada */
+#arrive-information-index > *,
+#show-information-index > *,
+#arrive-information-turismo > *,
+#show-information-turismo > * {
     animation: aparecer 0.55s var(--ease) both;
-}
-
-/* Botones sobre fondo azul: amarillos para que se vean */
-.results button,
-.results .btn {
-    color: var(--azul);
-    background: var(--amarillo);
-    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
-}
-
-.results button:hover,
-.results .btn:hover {
-    background: var(--blanco);
-    box-shadow: 0 7px 0 rgba(0, 0, 0, 0.4), 0 14px 22px rgba(0, 0, 0, 0.35);
 }
 
 /* ---------- Llamado a turismo ---------- */

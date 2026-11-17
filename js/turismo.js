@@ -81,17 +81,13 @@ function renderizarTarjetaLugar(lugar) {
     const ciudad = lugar.city ? lugar.city.name : "Colombia";
     const descripcion = lugar.description || "Atractivo turístico destacado de Colombia.";
 
+    // Diseño vertical centrado: Título rojo -> Descripción amarilla -> Imagen centrada (igual al boceto[cite: 15])
     showTurismo.innerHTML = `
-        <article class="result-box">
-            <div class="example">Ejemplo: "${lugar.name}"</div>
-            <div class="place-layout">
-                <div class="place-info">
-                    <div class="label">"${lugar.name}" (${ciudad})</div>
-                    <div class="value">${descripcion}</div>
-                </div>
-                <div class="value-img">
-                    <img src="${foto}" alt="${lugar.name}" onerror="this.onerror=null; this.src='${IMAGEN_TURISMO_RESPALDO}';">
-                </div>
+        <article class="result-box vertical-center">
+            <div class="label">"${lugar.name}" - ${ciudad}</div>
+            <div class="value">${descripcion}</div>
+            <div class="value-img">
+                <img src="${foto}" alt="${lugar.name}" onerror="this.onerror=null; this.src='${IMAGEN_TURISMO_RESPALDO}';">
             </div>
         </article>
     `;

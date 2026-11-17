@@ -7,6 +7,7 @@
     <title>Colombia en datos - Mini Portal</title>
     <link rel = "stylesheet" href="./css/main.css">
     <link rel = "stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/turismo.css">
     <link rel = "icon" type="images/svg" href="./images/favicon.svg">
 </head>
 
@@ -14,7 +15,7 @@
     
     <header>
         <nav class = "navbar">
-            <h1> Mini portal Colombia </h1>
+            <h1> Guía Turística - Mini Portal </h1>
             <ul class = "nav-links">
                 <li> <a href="index.html"> Datos Generales</a></li>
                 <li> <a href="turismo.html" class="active"> Guia turismo</a></li>
@@ -48,14 +49,14 @@
             <div id="country-container" class="result-warpper">
                 <h2 class="result-title">Conoce mas</h2>
                 <p class="information">Selecciona un lugar para visualizar su información</p>
-                <a href="#arrive-information" class="btn-icon"></a>
+                <a href="#arrive-information-turismo" class="btn-icon"></a>
             </div>
 
             <div id="arrive-information-turismo">
                 <!--Informacion traida desde js-->
             </div>
 
-            <div id="show-information.turismo">
+            <div id="show-information-turismo">
                 <!--Aqui se vera el resultado de la busqueda-->
             </div>
         </section>
@@ -70,6 +71,7 @@
         <p>&copy; 2026 - Mini Portal API Colombia | Desarrollado con JavaScript</p>
     </footer>
 
+    <script src="./js/api.js"></script>
     <script src="./js/turismo.js"></script>
 
 </body>
